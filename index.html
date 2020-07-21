@@ -1,0 +1,20 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>hello pwa</title>
+        <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+        <link rel="stylesheet" href="main.css">
+        <link rel="manifest" href="manifest.json">
+    </head>
+    <body>
+        <h3>pwa</h3>
+    </body>
+    <script>
+        if (navigator.serviceWorker != null) {
+            navigator.serviceWorker.register('./service_worker.js')
+            .then(function(registartion) {
+                console.log('support sw:', registartion.scope)
+            })
+        }
+    </script>
+</html>
